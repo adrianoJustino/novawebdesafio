@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NovawebDesafio.Model;
+using NovawebDesafio.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace NovawebDesafio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ContactContext>(x => x.UseSqlite("Data source=contacts.db"));
+            services.AddScoped<IContactRepository, ContactRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

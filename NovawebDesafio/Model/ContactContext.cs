@@ -13,6 +13,6 @@ namespace NovawebDesafio.Model
             Database.EnsureCreated();
         }
 
-        public DbSet<Contact> Contactcs { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
